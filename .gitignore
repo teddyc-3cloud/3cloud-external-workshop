@@ -126,13 +126,4 @@ vite.config.ts.timestamp-*
 .firebase/
 .claude/worktrees/
 
-# Un-ignore overrides (presenter-app)
-!presenter-app/
-!presenter-app/**/*.ts
-!presenter-app/**/*.tsx
-!presenter-app/package.json
-!presenter-app/vite.config.ts
-!presenter-app/index.html
-!presenter-app/tailwind.config.ts
-!presenter-app/tsconfig.json
-!presenter-app/tsconfig.node.json
+.vscode/

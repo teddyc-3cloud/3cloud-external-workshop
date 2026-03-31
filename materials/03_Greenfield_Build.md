@@ -208,13 +208,4 @@ You've gone from a first-principles prompt to a fully working application — wi
 
 You built the MCP Traffic Inspector. In Module 04, you'll use it to observe real AI behavior — and discover what your tools are actually doing under the hood.
 
----
-
-> **Facilitator Note:**
-> - **Timing checkpoints:** T1 (5 min mark), T2 (12 min), T3-T6 (30 min). If most participants are still on T3 at the 20-minute mark, announce checkpoint code availability.
-> - **Common failure:** `npm test` fails after T2 because the test framework isn't set up yet. This is expected — tests are added in T3. Tell participants: "If `npm test` fails with 'no test script', that's correct at this stage. Just verify the acceptance criteria manually."
-> - **Fast finishers:** Direct them to the stretch goal in Module 04 (real LLM swap) so they have something to work on while others catch up.
-
----
-
 > **Next:** [04 — Observe Your Tools](./04_Observe_Your_Tools.md)
