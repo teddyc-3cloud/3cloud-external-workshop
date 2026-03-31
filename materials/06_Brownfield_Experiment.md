@@ -747,12 +747,4 @@ If you've installed the [OpenCode GitHub App](https://github.com/apps/opencode-a
 
 ---
 
-> **Facilitator Note:**
-> - **Timing:** Steps 1-3 (10 min), Steps 4-6 (10 min). If participants are still choosing tools at the 5-minute mark, direct everyone to use the same tool to keep the group synchronized.
-> - **Tool selection:** If the group is mixed, recommend Claude Code or Copilot CLI for terminal users (both have plan mode) and Copilot Agent Mode for VS Code users (also supports plan mode). Avoid letting participants spend too long choosing — the output is identical regardless of tool.
-> - **Common issue:** Sub-agents sometimes produce overlapping findings (e.g., Business Analyst and QA Engineer both flag the same edge case). This is expected — tell participants to deduplicate during the consolidation step.
-> - **The `legacy_calculator.js` file** is included in the workshop repo at `Assets/01-Tooling-and-Dev/legacy_calculator.js`. Have participants copy it to their working directory if they don't bring their own legacy code.
-
----
-
 > **Next:** [07 — CLI AI Coding Tools](./07_CLI_AI_Coding_Tools.md)

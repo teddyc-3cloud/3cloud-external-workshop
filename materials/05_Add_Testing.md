@@ -93,8 +93,6 @@ npx playwright test
 
 ## Approach 3: Claude Code Stop Hook — Automated Static Analysis
 
-> 📖 **Facilitator Demo:** The instructor will demonstrate the Stop hook live — watch for the self-correction loop: Claude edits code, the hook catches a lint error, and Claude fixes it in the same turn without any re-prompting. The configuration below is yours to set up after the workshop.
-
 > 📖 **Informational:** This section covers a Claude Code-specific capability. If your team uses a different AI coding tool (GitHub Copilot, Cursor, etc.), the same concept applies via that tool's automation hooks or task runners.
 
 **What it is:** Claude Code's _hook system_ lets you attach shell commands to lifecycle events in the AI's session. The **Stop hook** fires every time Claude finishes a response — making it the ideal trigger for static analysis that should run after every code modification.
@@ -290,11 +288,6 @@ You now have three layers of automated quality assurance for your MCP Traffic In
 
 These testing patterns apply equally to unfamiliar codebases. In Module 06, you'll prove it — applying everything you've built to reverse-engineer and extend legacy code.
 
----
-
-> **Facilitator Note:**
-> - **If ESLint is not configured:** The Stop Hook demo will fail silently if there's no `lint` script in `package.json`. Quick fix: `npm install -D eslint && npx eslint --init` before the demo, or have a pre-configured `package.json` snippet ready.
-> - **Pacing:** If running behind, skip the advanced multi-check hook script (lines 205-258) — it's a post-workshop reference. The inline JSON config is sufficient for the demo.
 
 ---
 

@@ -32,10 +32,10 @@ The workshop uses **GitHub Copilot Agent Mode** as its primary implementation to
 | ---- | ----- | ---- | -------- |
 | **Codex CLI** | OpenAI | Full coding agent (CLI) | Maximum sandbox isolation, multi-provider models, open-source preference |
 | **Claude Code** | Anthropic | Full coding agent (CLI) | Mature hooks/auto-correction, MCP workflows, Anthropic model teams |
-| **Copilot CLI** (`gh copilot`) | GitHub | Full coding agent (CLI) | GitHub-native workflows, MCP-powered tasks, plan mode and parallel sub-agents |
+| **Copilot CLI** (`copilot`) | GitHub | Full coding agent (CLI) | GitHub-native workflows, MCP-powered tasks, plan mode and parallel sub-agents |
 | **OpenCode** | Community | Full coding agent (CLI) | BYO model, provider-agnostic, local/self-hosted LLMs |
 
-> **Note:** The original `gh copilot suggest` / `gh copilot explain` extension was deprecated in October 2025. The current **GitHub Copilot CLI** (GA February 25, 2026) is a full agentic coding assistant. See the [Copilot CLI profile](#github-copilot-cli-gh-copilot) below.
+> **Note:** The **GitHub Copilot CLI** is a standalone terminal coding agent (not the `gh copilot` extension). Install via `npm install -g @github/copilot` and invoke as `copilot`. See the [Copilot CLI profile](#github-copilot-cli-copilot) below.
 
 ---
 
@@ -170,34 +170,33 @@ See [Module 5 — Approach 3: Stop Hook](./05_Add_Testing.md#approach-3-claude-c
 
 ---
 
-### GitHub Copilot CLI (`gh copilot`)
+### GitHub Copilot CLI (`copilot`)
 
-**What it is:** A full agentic coding assistant for the terminal, generally available February 25, 2026. You describe a task in natural language; it reads your codebase, writes multi-file changes, runs tests and shell commands, and reports results — all from the terminal. It is GitHub-native: it ships with the GitHub MCP server built-in and is designed for teams already in the GitHub ecosystem.
-
-> **Legacy note:** The original `gh copilot suggest` and `gh copilot explain` commands (shell command lookup) were deprecated in October 2025. The current product described here is a fundamentally different, agentic tool.
+**What it is:** A standalone terminal coding agent from GitHub. You describe a task in natural language; it reads your codebase, writes multi-file changes, runs tests and shell commands, and reports results — all from the terminal. It is GitHub-native: it ships with the GitHub MCP server built-in and works directly with your issues and pull requests.
 
 **Install:**
 
 ```bash
 npm install -g @github/copilot
-# or via gh CLI (auto-installs on first run)
-gh copilot
+# or
+curl -fsSL https://gh.io/copilot-install | bash
 ```
 
 **Key capabilities:**
 
 | Feature | What it does |
 | ------- | ------------ |
-| **Plan mode** | Press Shift+Tab to enter plan mode — outlines the work and waits for approval before executing |
+| **Plan mode (`/plan`)** | Outlines the work and waits for approval before executing any changes |
 | **Sub-agents (`/fleet`)** | Run the same task across multiple sub-agents in parallel for broad refactors or research |
-| **Built-in agents** | `Explore` (analyzes the codebase without cluttering context), `Task` (runs commands like tests and builds) |
+| **Model switching (`/model`)** | Switch between models from Anthropic, Google, and OpenAI mid-session |
+| **GitHub integration** | Native MCP support for working with issues, branches, and pull requests; `/delegate` creates branches and PRs |
 | **MCP integration** | Ships with GitHub MCP server built-in; configure custom MCP servers for additional tools |
 
 **Running the Module 3 workflow in Copilot CLI:**
 
 ```bash
 # Start a new session
-gh copilot
+copilot
 
 # Start the change (generates proposal first)
 > Read spec.md and run /opsx:new rate-limit-monitor
@@ -218,10 +217,10 @@ git add -A && git commit -m "Task 1: Project setup + in-memory store"
 ```
 
 **When to choose Copilot CLI:**
-- Your team is GitHub-native and wants AI tooling that integrates directly with GitHub APIs and MCP
+- Your team is GitHub-native and wants AI tooling that integrates directly with GitHub issues, PRs, and MCP
 - You need a terminal agent outside VS Code but want to stay in the GitHub ecosystem
-- You want plan mode and parallel sub-agents (`/fleet`) for broad exploration tasks
-- You're comfortable with GitHub-managed model selection
+- You want plan mode (`/plan`) and parallel sub-agents (`/fleet`) for broad exploration tasks
+- You want multi-model flexibility (Anthropic, Google, OpenAI) with GitHub auth and governance
 
 ---
 
@@ -277,8 +276,8 @@ opencode --model ollama/qwen2.5-coder:32b
 | Plan mode | Yes | Yes | Yes | Yes (Shift+Tab) | Yes (Plan agent) |
 | Sub-agents / parallel tasks | Yes (`#runSubagent`) | Yes | Yes | Yes (`/fleet`) | Yes |
 | MCP client integration | Yes | Yes (native) | Yes (native) | Yes (native, GitHub MCP built-in) | Yes |
-| OpenSpec via config file | `copilot-instructions.md` | `AGENTS.md` | `CLAUDE.md` | `copilot-instructions.md` | `opencode.json` |
-| Model flexibility | GitHub-managed | Multi-provider (OpenAI, Gemini, Ollama, Mistral, Azure, etc.) | Anthropic models (Bedrock/Vertex supported) | GitHub-managed | Any provider |
+| OpenSpec via config file | `copilot-instructions.md` | `AGENTS.md` | `CLAUDE.md` | `AGENTS.md` | `opencode.json` |
+| Model flexibility | GitHub-managed | Multi-provider (OpenAI, Gemini, Ollama, Mistral, Azure, etc.) | Anthropic models (Bedrock/Vertex supported) | Multi-model (Anthropic, Google, OpenAI) | Any provider |
 | Open source | No | Yes | No | No | Yes |
 | IDE integration | Deep (VS Code native) | Yes (VS Code, Cursor, Windsurf) | Yes (VS Code, JetBrains) | No | Yes (VS Code extension) |
 
@@ -290,12 +289,12 @@ The **One Task = One Session = One Commit** discipline from Module 3 applies reg
 
 | Workflow Step | Copilot Agent Mode | Codex CLI | Claude Code | Copilot CLI |
 | ------------- | ------------------ | --------- | ----------- | ----------- |
-| **Start fresh session** | Open new Agent Mode chat | `codex` (new invocation) | `claude` (new invocation) | `gh copilot` (new invocation) |
+| **Start fresh session** | Open new Agent Mode chat | `codex` (new invocation) | `claude` (new invocation) | `copilot` (new invocation) |
 | **Propose (simple)** | `/opsx:ff <name>` in chat | `> /opsx:ff <name>` | `> /opsx:ff <name>` | `> /opsx:ff <name>` |
 | **Propose (complex)** | `/opsx:new <name>` then `/opsx:continue` | `> /opsx:new <name>` then `> /opsx:continue` | `> /opsx:new <name>` then `> /opsx:continue` | `> /opsx:new <name>` then `> /opsx:continue` |
 | **Review artifacts** | Open files in VS Code editor | Open files in editor / terminal pager | Open files in editor / terminal pager | Open files in editor / terminal pager |
 | **Apply (implement)** | `/opsx:apply` in chat | `> /opsx:apply` | `> /opsx:apply` | `> /opsx:apply` |
-| **Static check** | Hooks or re-prompt | Hook or manual (`npm run lint`) | Automatic (Stop hook fires) | Manual (`npm run lint`) |
+| **Static check** | Hooks or re-prompt | Hook or manual (`npm run lint`) | Automatic (Stop hook fires) | Manual (`npm run lint`) or `/plan` re-review |
 | **Archive** | `/opsx:archive` in chat | `> /opsx:archive` | `> /opsx:archive` | `> /opsx:archive` |
 | **Commit** | `git add -A && git commit` | `git add -A && git commit` | `git add -A && git commit` | `git add -A && git commit` |
 
@@ -317,7 +316,7 @@ Are you working inside VS Code?
     └── No ──▶ Is GitHub ecosystem integration your top priority?
                     │
                     ├── Yes ──▶ Copilot CLI
-                    │           (GitHub-native, MCP-powered, plan mode, /fleet sub-agents)
+                    │           (GitHub-native, MCP-powered, /plan mode, /fleet sub-agents, multi-model)
                     │
                     └── No ──▶ Do you need maximum sandbox isolation?
                                     │
@@ -338,7 +337,7 @@ Are you working inside VS Code?
                                                                                 (choose based on model preference and team convention)
 ```
 
-> **Note on converging capabilities:** As of early 2026, hooks, plan mode, sub-agents, MCP support, and sandboxed execution have become broadly available across tools (see matrix). Differentiation now lives in _maturity_ (Claude Code has the most battle-tested hook system), _isolation depth_ (Codex CLI uses kernel-level sandboxing — the strongest of the three tools that support it), and _ecosystem fit_ (Copilot CLI for GitHub-native teams, OpenCode for self-hosting).
+> **Note on converging capabilities:** As of early 2026, hooks, plan mode, sub-agents, MCP support, and sandboxed execution have become broadly available across tools (see matrix). Differentiation now lives in _maturity_ (Claude Code has the most battle-tested hook system), _isolation depth_ (Codex CLI uses kernel-level sandboxing — the strongest of the three tools that support it), and _ecosystem fit_ (Copilot CLI for GitHub-native teams with its `/delegate` PR workflow, OpenCode for self-hosting).
 
 ---
 
@@ -349,7 +348,7 @@ Each tool reads a project-level config file that encodes your workflow rules. Th
 | Tool | Config File | Workshop Example |
 | ---- | ----------- | ---------------- |
 | GitHub Copilot Agent Mode | `.github/copilot-instructions.md` | _(inline in VS Code workspace)_ |
-| Copilot CLI | `.github/copilot-instructions.md` | _(same as Agent Mode — shared GitHub config)_ |
+| Copilot CLI | `AGENTS.md` | _(same as Codex CLI — copy `AGENTS.example.md`)_ |
 | Codex CLI | `AGENTS.md` | [`AGENTS.example.md`](./AGENTS.example.md) |
 | Claude Code | `CLAUDE.md` | [`CLAUDE.example.md`](./CLAUDE.example.md) |
 | OpenCode | `opencode.json` | _(customize from Codex CLI template)_ |
@@ -388,8 +387,8 @@ opencode
 **Option D — Install Copilot CLI and run a plan:**
 ```bash
 npm install -g @github/copilot
-gh copilot
-> Use plan mode (Shift+Tab) to outline a fix for any open TODO in the codebase
+copilot
+> /plan fix any open TODO in the codebase
 ```
 
 The point is not to master the tool in 5 minutes — it's to prove that the workflow you've practiced all day is portable. The commands, the specs, and the discipline transfer. The tool is just the variable.
@@ -400,14 +399,5 @@ The point is not to master the tool in 5 minutes — it's to prove that the work
 
 > **The workflow is the constant. The tool is the variable.** The OpenSpec commands (`/opsx:ff`, `/opsx:new`, `/opsx:apply`, `/opsx:archive`) work identically across Copilot Agent Mode, Codex CLI, Claude Code, and Copilot CLI. The spec-first discipline you practiced today doesn't lock you into any single tool — it works with whatever your team adopts next.
 
----
-
-> **Facilitator Note:**
-> - **Exercise pacing (5 min):** Participants only need to install and run one command. If install fails (corporate proxy, permissions), pair them with a neighbor who succeeded. The learning objective is exposure, not mastery.
-> - **Common issue:** `npm install -g` fails due to permissions. Quick fix: `sudo npm install -g` on Mac, or run PowerShell as Administrator on Windows.
-> - **Wrap-up (2 min):** Ask 2-3 participants to share which tool they tried and what surprised them. This creates a natural closing discussion.
-> - **Copilot CLI note:** If participants ask about `gh copilot suggest` / `gh copilot explain`, clarify that those commands were deprecated in October 2025. The current Copilot CLI is a full coding agent.
-
----
 
 > **Previous:** [06 — Brownfield Experiment](./06_Brownfield_Experiment.md)
