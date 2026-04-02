@@ -3,13 +3,6 @@
 **Time Allocation:** 15 minutes (20 minutes with buffer)
 **Format:** Live Demo + Hands-On
 
----
-
-> **Workshop Navigation**
-> **Previous:** [01 — Start With Why](./01_Start_With_Why.md)
-> **Next:** [03 — Greenfield Build](./03_Greenfield_Build.md)
-
----
 
 > **Skill Levels:** New to AI tools? Focus on Phases 1-2 — writing the spec and watching the blueprint generate. Already using Agent Mode regularly? OpenSpec adds structure and auditability to a workflow you're likely running informally — watch for how the review gates change your prompting habits.
 
@@ -110,7 +103,12 @@ openspec/
 └── changes/        # Proposed changes (one folder per feature)
 ```
 
-**Step 3:** Create `spec.md` using your first-principles output from Module 1. Here's a solid starting point:
+**Step 3:** Here, you have 2 ways of doing this. 
+1. use /opsx:new command and copy and paste solution details came out from first principle thinking from previous "start with why" section.
+
+2. Or, you can just create `spec.md` using your first-principles output from Module 1, and with /opsx:new [point location of your spec.md file]
+
+Here's a starting point (Provided here from first principle output for your convenience):
 
 ```markdown
 # Feature: MCP Traffic Inspector
@@ -295,25 +293,5 @@ Your AI assistant will usually prompt you to exit plan mode (approve the plan) b
 
 > **Proceed to Module 3.** You'll implement each task with `/opsx:apply`, then verify and archive the change — one clean cycle to close out the build.
 
----
 
-## The Fundamentals ↔ Tooling Connection
 
-| You learned the fundamental...                  | OpenSpec automates it as...                                   |
-| ----------------------------------------------- | ------------------------------------------------------------- |
-| Write a spec with problem, user, rules, success | `spec.md` → input to `/opsx:new` (complex) or `/opsx:ff` (simple) |
-| Ask AI to generate a technical plan             | `proposal.md` + `design.md` (auto-generated)                  |
-| Ask AI to break the plan into tasks             | `tasks.md` (auto-generated)                                   |
-| Human review gate between each phase            | You still review — but artifacts are structured and organized |
-| Confirm AI actually finished what it promised   | `/opsx:verify` — checks every `tasks.md` item against the code |
-
-> **Facilitator Note:**
-> - **Timing:** Phase 1 (5 min), Phase 2 (5 min), Phase 3 (5 min). If `openspec init` fails for a participant, the most common cause is npm global bin not in PATH — see Module 00 troubleshooting.
-> - **Common issue:** Some participants will try to skip the review gate and go straight to `/opsx:apply`. Redirect: "The review is the whole point — this is where you catch AI drift before it becomes code."
-> - **If behind schedule:** Provide the pre-built `openspec/changes/mcp-traffic-inspector/` folder as a checkpoint so participants can skip to Phase 3.
-
-> 🎯 **You now have your implementation roadmap.** Each task becomes a single, focused Agent Mode session in Module 3 — where you'll build, verify, and archive the change.
-
----
-
-> **Next:** [03 — Greenfield Build](./03_Greenfield_Build.md)

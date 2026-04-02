@@ -3,13 +3,6 @@
 **Time Allocation:** 30 minutes (35 minutes with buffer)
 **Format:** Hands-On Workshop
 
----
-
-> **Workshop Navigation**
-> **Previous:** [02 — Spec to Blueprint](./02_Spec_to_Blueprint.md)
-> **Next:** [04 — Observe Your Tools](./04_Observe_Your_Tools.md)
-
----
 
 > **Skill Levels:** First time using AI for implementation? Focus on T1 and T2 — internalize the "One Task = One Session = One Commit" cycle. Already AI-proficient? Pay attention to the verify/sync/archive workflow — it's the discipline layer most AI-assisted workflows lack.
 
@@ -208,4 +201,3 @@ You've gone from a first-principles prompt to a fully working application — wi
 
 You built the MCP Traffic Inspector. In Module 04, you'll use it to observe real AI behavior — and discover what your tools are actually doing under the hood.
 
-> **Next:** [04 — Observe Your Tools](./04_Observe_Your_Tools.md)

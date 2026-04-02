@@ -3,13 +3,7 @@
 **Time Allocation:** 15 minutes (20 minutes with buffer)
 **Format:** Hands-On Workshop
 
----
 
-> **Workshop Navigation**
-> **Previous:** [03 — Greenfield Build](./03_Greenfield_Build.md)
-> **Next:** [05 — Add Testing](./05_Add_Testing.md)
-
----
 
 > **Skill Levels:** New to AI tools? Focus on Step 1 — exploring the live traffic log requires no AI interaction. Already comfortable with AI agents? Step 2's latency alerting and Step 3's MCP config show how observability patterns transfer to production.
 
@@ -220,14 +214,3 @@ At this point you have:
 - [x] A clear extension point for swapping mock LLM → real LLM
 
 You can now **see** exactly what your AI is doing when it uses MCP tools — in real time, with a structured audit trail.
-
----
-
-> **Facilitator Note:**
-> - **Timing:** Step 1 (5 min), Step 2 (5 min), Step 3 (5 min). The stretch goal is buffer — skip it if behind schedule.
-> - **Common issue:** `.vscode/mcp.json` not picked up after creation. Solution: the participant must reload the VS Code window (Cmd+Shift+P → "Reload Window"), not just save the file.
-> - **If Step 2 stalls:** The `/opsx:ff` workflow may take longer than expected for some participants. Direct them to the manual fallback (add the `if` check manually) to keep the group moving.
-
----
-
-> **Next:** [05 — Add Testing](./05_Add_Testing.md)
