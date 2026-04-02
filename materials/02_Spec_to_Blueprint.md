@@ -293,24 +293,5 @@ Your AI assistant will usually prompt you to exit plan mode (approve the plan) b
 
 > **Proceed to Module 3.** You'll implement each task with `/opsx:apply`, then verify and archive the change — one clean cycle to close out the build.
 
----
 
-## The Fundamentals ↔ Tooling Connection
-
-| You learned the fundamental...                  | OpenSpec automates it as...                                   |
-| ----------------------------------------------- | ------------------------------------------------------------- |
-| Write a spec with problem, user, rules, success | `spec.md` → input to `/opsx:new` (complex) or `/opsx:ff` (simple) |
-| Ask AI to generate a technical plan             | `proposal.md` + `design.md` (auto-generated)                  |
-| Ask AI to break the plan into tasks             | `tasks.md` (auto-generated)                                   |
-| Human review gate between each phase            | You still review — but artifacts are structured and organized |
-| Confirm AI actually finished what it promised   | `/opsx:verify` — checks every `tasks.md` item against the code |
-
-> **Facilitator Note:**
-> - **Timing:** Phase 1 (5 min), Phase 2 (5 min), Phase 3 (5 min). If `openspec init` fails for a participant, the most common cause is npm global bin not in PATH — see Module 00 troubleshooting.
-> - **Common issue:** Some participants will try to skip the review gate and go straight to `/opsx:apply`. Redirect: "The review is the whole point — this is where you catch AI drift before it becomes code."
-> - **If behind schedule:** Provide the pre-built `openspec/changes/mcp-traffic-inspector/` folder as a checkpoint so participants can skip to Phase 3.
-
-> 🎯 **You now have your implementation roadmap.** Each task becomes a single, focused Agent Mode session in Module 3 — where you'll build, verify, and archive the change.
-
----
 
