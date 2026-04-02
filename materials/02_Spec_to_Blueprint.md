@@ -3,13 +3,6 @@
 **Time Allocation:** 15 minutes (20 minutes with buffer)
 **Format:** Live Demo + Hands-On
 
----
-
-> **Workshop Navigation**
-> **Previous:** [01 — Start With Why](./01_Start_With_Why.md)
-> **Next:** [03 — Greenfield Build](./03_Greenfield_Build.md)
-
----
 
 > **Skill Levels:** New to AI tools? Focus on Phases 1-2 — writing the spec and watching the blueprint generate. Already using Agent Mode regularly? OpenSpec adds structure and auditability to a workflow you're likely running informally — watch for how the review gates change your prompting habits.
 
@@ -110,7 +103,12 @@ openspec/
 └── changes/        # Proposed changes (one folder per feature)
 ```
 
-**Step 3:** Create `spec.md` using your first-principles output from Module 1. Here's a solid starting point:
+**Step 3:** Here, you have 2 ways of doing this. 
+1. use /opsx:new command and copy and paste solution details came out from first principle thinking from previous "start with why" section.
+
+2. Or, you can just create `spec.md` using your first-principles output from Module 1, and with /opsx:new [point location of your spec.md file]
+
+Here's a starting point (Provided here from first principle output for your convenience):
 
 ```markdown
 # Feature: MCP Traffic Inspector
@@ -316,4 +314,3 @@ Your AI assistant will usually prompt you to exit plan mode (approve the plan) b
 
 ---
 
-> **Next:** [03 — Greenfield Build](./03_Greenfield_Build.md)
