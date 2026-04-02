@@ -3,17 +3,12 @@
 **Time Allocation:** 20 minutes (25 minutes with buffer)
 **Format:** Hands-On Workshop
 
----
 
-> **Workshop Navigation**
-> **Previous:** [05 — Add Testing](./05_Add_Testing.md)
-> **Next:** [07 — CLI AI Coding Tools](./07_CLI_AI_Coding_Tools.md)
-
----
 
 ## What You've Built So Far
 
 Before diving into brownfield work, here's the complete MCP Traffic Inspector you built across Modules 1-5:
+(it will be something similar - cannot be exactly the same, as our specification didn't explicitly enforced structure)
 
 ```
 mcp-traffic-inspector/

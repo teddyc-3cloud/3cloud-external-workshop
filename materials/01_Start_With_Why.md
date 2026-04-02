@@ -3,13 +3,6 @@
 **Time Allocation:** 20 minutes (25 minutes with buffer)
 **Format:** Discussion + Guided Exercise
 
----
-
-> **Workshop Navigation**
-> **Next:** [02 — Spec to Blueprint](./02_Spec_to_Blueprint.md)
-
----
-
 > **Skill Levels:** New to AI coding tools? This module gives you the foundational mental model for everything that follows. Already writing structured prompts daily? Watch for the first-principles decomposition technique — it gives your existing practice a shareable vocabulary and a systematic edge.
 
 ---
@@ -58,7 +51,25 @@ possible solution that satisfies all of them?
 
 ### Step 2: See What the AI Surfaces
 
-For example, if you prompt: _"We need a booking widget for freight forwarders"_, the AI might decompose it to:
+For example, if you prompt: _"We need a booking widget for freight forwarders"_, and ask AI to apply first principle thinking, the AI might decompose it to:
+
+E.g.
+```
+Use first-principles thinking to break down the following problem
+into its atomic-level fundamentals.
+
+PROBLEM: We need a booking widget for freight forwarders
+
+For each atomic component, identify:
+1. The fundamental truth (what MUST be true regardless of implementation)
+2. The assumptions we're making (what we THINK is true but could be wrong)
+3. The constraints (what limits our options)
+4. The unknowns (what we don't know yet)
+
+Then synthesize: given only the fundamental truths, what is the simplest
+possible solution that satisfies all of them?
+```
+
 
 | Atomic Component | Fundamental Truth                                   | Assumption to Challenge                                                         |
 | ---------------- | --------------------------------------------------- | ------------------------------------------------------------------------------- |
@@ -103,6 +114,22 @@ Write down:
 
 > 🎯 **Hold onto your output — you'll use it directly.** In Module 02, you'll paste this PROBLEM/USER/RULES/SUCCESS output into the OpenSpec CLI as the input for your formal spec. The better your decomposition here, the better your blueprint in the next module.
 
+## Copy and Paste: To CLI
+Use first-principles thinking to break down the following problem
+into its atomic-level fundamentals.
+
+PROBLEM: You need an **MCP Traffic Inspector** — a local tool that shows you the real-time conversation between an LLM and MCP tools. It should include a **single-line chat input** to trigger tool calls, and a **live traffic log** that visualizes each step: user message → LLM routing decision → MCP tool call → MCP result → final response.
+
+For each atomic component, identify:
+1. The fundamental truth (what MUST be true regardless of implementation)
+2. The assumptions we're making (what we THINK is true but could be wrong)
+3. The constraints (what limits our options)
+4. The unknowns (what we don't know yet)
+
+Then synthesize: given only the fundamental truths, what is the simplest
+possible solution that satisfies all of them?
+
+
 ---
 
 > **Facilitator Note:**
@@ -111,5 +138,3 @@ Write down:
 > - **Common issue:** Some participants will try to write implementation details in their spec. Redirect: "Save the _how_ for Module 02. Here we only define _what_ and _why_."
 
 ---
-
-> **Next:** [02 — Spec to Blueprint](./02_Spec_to_Blueprint.md)

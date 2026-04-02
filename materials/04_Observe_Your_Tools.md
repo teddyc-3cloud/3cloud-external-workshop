@@ -3,13 +3,7 @@
 **Time Allocation:** 15 minutes (20 minutes with buffer)
 **Format:** Hands-On Workshop
 
----
 
-> **Workshop Navigation**
-> **Previous:** [03 — Greenfield Build](./03_Greenfield_Build.md)
-> **Next:** [05 — Add Testing](./05_Add_Testing.md)
-
----
 
 > **Skill Levels:** New to AI tools? Focus on Step 1 — exploring the live traffic log requires no AI interaction. Already comfortable with AI agents? Step 2's latency alerting and Step 3's MCP config show how observability patterns transfer to production.
 

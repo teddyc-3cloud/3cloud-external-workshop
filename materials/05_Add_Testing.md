@@ -3,13 +3,7 @@
 **Time Allocation:** 15 minutes (20 minutes with buffer)
 **Format:** Live Demo + Hands-On
 
----
 
-> **Workshop Navigation**
-> **Previous:** [04 — Observe Your Tools](./04_Observe_Your_Tools.md)
-> **Next:** [06 — Brownfield Experiment](./06_Brownfield_Experiment.md)
-
----
 
 > **Skill Levels:** New to AI tools? Focus on Approach 1 (Playwright MCP, 7 min hands-on) — it produces a real test file you can run. Already advanced? Approach 3 (Stop Hook) shows automated self-correction that will change how you work with AI agents daily.
 

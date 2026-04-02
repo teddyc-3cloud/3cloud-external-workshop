@@ -4,10 +4,6 @@
 **Format:** Hands-On + Reference
 **Purpose:** Landscape session for terminal-native AI coding tools — when to use each, how they compare, and how the same OpenSpec workflow maps across Copilot, Codex CLI, Claude Code, and OpenCode.
 
----
-
-> **Workshop Navigation**
-> **Previous:** [06 — Brownfield Experiment](./06_Brownfield_Experiment.md)
 
 > **Skill Levels:** Already using one of these CLI tools daily? Compare your setup against the capability matrix below and identify gaps. New to CLI AI tools? Focus on the decision guide and the hands-on exercise — you'll install one tool and run a real workflow with it.
 
@@ -170,18 +166,17 @@ See [Module 5 — Approach 3: Stop Hook](./05_Add_Testing.md#approach-3-claude-c
 
 ---
 
-### GitHub Copilot CLI (`gh copilot`)
+### GitHub Copilot CLI (`copilot`)
 
 **What it is:** A full agentic coding assistant for the terminal, generally available February 25, 2026. You describe a task in natural language; it reads your codebase, writes multi-file changes, runs tests and shell commands, and reports results — all from the terminal. It is GitHub-native: it ships with the GitHub MCP server built-in and is designed for teams already in the GitHub ecosystem.
 
-> **Legacy note:** The original `gh copilot suggest` and `gh copilot explain` commands (shell command lookup) were deprecated in October 2025. The current product described here is a fundamentally different, agentic tool.
 
 **Install:**
 
 ```bash
 npm install -g @github/copilot
 # or via gh CLI (auto-installs on first run)
-gh copilot
+copilot
 ```
 
 **Key capabilities:**
