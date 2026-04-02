@@ -128,13 +128,3 @@ For each atomic component, identify:
 
 Then synthesize: given only the fundamental truths, what is the simplest
 possible solution that satisfies all of them?
-
-
----
-
-> **Facilitator Note:**
-> - **Discussion prompts (5 min):** (1) "What's the worst AI-generated code you've seen — and what was missing from the prompt?" (2) "How do you currently communicate requirements to your team? How would you change that for an AI?" (3) "Where in your current workflow would first-principles decomposition save the most rework?"
-> - **Timing checkpoint:** If discussion runs past 10 minutes, transition to the exercise. Participants can continue discussing during the exercise.
-> - **Common issue:** Some participants will try to write implementation details in their spec. Redirect: "Save the _how_ for Module 02. Here we only define _what_ and _why_."
-
----
