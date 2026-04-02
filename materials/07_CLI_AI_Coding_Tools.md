@@ -395,14 +395,3 @@ The point is not to master the tool in 5 minutes — it's to prove that the work
 
 > **The workflow is the constant. The tool is the variable.** The OpenSpec commands (`/opsx:ff`, `/opsx:new`, `/opsx:apply`, `/opsx:archive`) work identically across Copilot Agent Mode, Codex CLI, Claude Code, and Copilot CLI. The spec-first discipline you practiced today doesn't lock you into any single tool — it works with whatever your team adopts next.
 
----
-
-> **Facilitator Note:**
-> - **Exercise pacing (5 min):** Participants only need to install and run one command. If install fails (corporate proxy, permissions), pair them with a neighbor who succeeded. The learning objective is exposure, not mastery.
-> - **Common issue:** `npm install -g` fails due to permissions. Quick fix: `sudo npm install -g` on Mac, or run PowerShell as Administrator on Windows.
-> - **Wrap-up (2 min):** Ask 2-3 participants to share which tool they tried and what surprised them. This creates a natural closing discussion.
-> - **Copilot CLI note:** If participants ask about `gh copilot suggest` / `gh copilot explain`, clarify that those commands were deprecated in October 2025. The current Copilot CLI is a full coding agent.
-
----
-
-> **Previous:** [06 — Brownfield Experiment](./06_Brownfield_Experiment.md)
